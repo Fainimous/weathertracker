@@ -1,33 +1,33 @@
 //if there is a history array stored locally, create the history below the search button and load the most recent search
-var savedhistory = [JSON.parse(localStorage.getItem("cityhistory"))];
-console.log(savedhistory);
-if (savedhistory.length === 1) {
-    console.log("starting");
-    var history = [JSON.parse(localStorage.getItem("cityhistory"))];
-    console.log(history);
-    $('#previousHistory').text("");
-    var divEL = $('<div id="searchhistory">');
-    var paraEL = $('<p>');
-    paraEL.text(history);
-    divEL.append(paraEL);
-    $('#previousHistory').prepend(divEL);
-    //getCurrentForecast();
-    }
-
-if (savedhistory.length >= 2) {
-    
-    var history = JSON.parse(localStorage.getItem("cityhistory"));
-    $('#previousHistory').text("");
-        for (i = 0; i < history.length; i++){
-            var divEL = $('<div id="searchhistory">');
-            var paraEL = $('<p>');
-            paraEL.text(history[i]);
-            divEL.append(paraEL);
-            $('#previousHistory').prepend(divEL);
-        }
+function init(){
+    var savedhistory = [JSON.parse(localStorage.getItem("cityhistory"))];
+    console.log(savedhistory);
+    if (savedhistory.length === 1) {
+        console.log("starting");
+        var history = [JSON.parse(localStorage.getItem("cityhistory"))];
+        console.log(history);
+        $('#previousHistory').text("");
+        var divEL = $('<div id="searchhistory">');
+        var paraEL = $('<p>');
+        paraEL.text(history);
+        divEL.append(paraEL);
+        $('#previousHistory').prepend(divEL);
         //getCurrentForecast();
     }
 
+    if (savedhistory.length >= 2) {
+        var history = JSON.parse(localStorage.getItem("cityhistory"));
+        $('#previousHistory').text("");
+            for (i = 0; i < history.length; i++){
+                var divEL = $('<div id="searchhistory">');
+                var paraEL = $('<p>');
+                paraEL.text(history[i]);
+                divEL.append(paraEL);
+                $('#previousHistory').prepend(divEL);
+            }
+        //getCurrentForecast();
+    }
+}
 // when button is clicked to search, then make an API call for both the current and 5 day forecast and populate the HTM with the results.
 //WHEN I view current weather conditions for that city
 //THEN I am presented with the city name, the date, an icon representation of weather conditions, 
@@ -40,7 +40,7 @@ $("#btn").on("click", function() {
         localStorage.setItem("cityhistory", JSON.stringify(history));
     }
     else {
-        var history = JSON.parse(localStorage.getItem("cityhistory"));
+        var history = [JSON.parse(localStorage.getItem("cityhistory"))];
         console.log(history);
         history.push(search);
         localStorage.setItem("cityhistory", JSON.stringify(history));
