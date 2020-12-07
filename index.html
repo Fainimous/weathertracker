@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>WeatherTracker</title>
+</head>
+<body>
+<header>
+<h1>Weather Tracker App</h1>
+</header>   
+<!-- Here is where the search section will be and then the stored previous searches below--> 
+<aside>
+<h2>Search:</h2>
+<div>
+    <input id="userSearch" type="text" placeholder="Enter a city to search"/>
+</div>
+    <button id="btn">Search</button>
+<div id="previousHistory">
+
+</div>
+</aside>
+<!-- Where the results will display with current day then the 5 day forecast below-->
+<main>
+    <!--current city information -->
+    <div id="currentinfo">
+
+    </div>
+    <!-- 5 day forcast info-->
+    <div id="fiveday">
+
+    </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+body {
+    background-color: #D7F9FF;
+    
+}
+
+header {
+    background-color: #0e1c36;
+    text-align: center;
+    font-size: 40px;
+    color: #FFEDE1;
+}
+
+aside {
+    width: 30%;
+    height: 100vh;
+    float: left;
+    border-right: 25px black;
+    
+}
+
+main {
+    max-width: 70%;
+    float: left;
+}
+
+.card {
+    background-color: #AFCBFF;
+    border-radius: 25px;
+    margin: 5px;
+    padding: 2px;
+    color: black;
+    text-align: center;
+}
+
+#currentinfo {
+    max-width: 70%;
+    display: inline;
+}
+
+#fiveday {
+    display: flex;
+    flex-wrap: wrap;
+}
